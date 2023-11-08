@@ -26,3 +26,4 @@ public class VolvoTest {
         volvo.stopEngine();
         assertEquals(0, volvo.getCurrentSpeed(), 0.01)
     }
+

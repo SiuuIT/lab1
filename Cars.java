@@ -33,11 +33,13 @@ public class Cars implements Movable {
 
     private double speedFactor() { return 0; }
     public void gas(double amount){
+        amount = Math.max(0, Math.min(1,amount));
         incrementSpeed(amount);
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
+        amount = Math.max(0, Math.min(1,amount));
         decrementSpeed(amount);
     }
 
