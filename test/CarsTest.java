@@ -67,7 +67,11 @@ public class CarsTest {
 
     @Test
     public void testMove() {
-
+        volvo.currentSpeed = 1;
+        volvo.direction = 1;
+        volvo.move();
+        volvo.stopEngine();
+        assertEquals(1, volvo.y_coordinate,0.0);
     }
 
     @Test
