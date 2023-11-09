@@ -1,5 +1,4 @@
 import java.awt.*;
-
 class Saab extends Cars{
     public boolean turboOn;
     public Saab(){
@@ -14,9 +13,7 @@ class Saab extends Cars{
     void setTurboOn(){
         turboOn = true;
     }
-    void setTurboOff(){
-        turboOn = false;
-    }
+    void setTurboOff(){ turboOn = false; }
     double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;

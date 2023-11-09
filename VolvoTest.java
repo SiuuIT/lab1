@@ -12,23 +12,23 @@ public class VolvoTest {
     public void init() {
         volvo = new Volvo();
     }
-}
+
 
     @Test
     public void testSpeedFactor() {
-        assertEquals(1.25, volvo.speedFactor(),0.01);
+        assertEquals(1.25, volvo.speedFactor(), 0.0);
     }
 
     @Test
     public void testStartEngine() {
         volvo.startEngine();
-        assertEquals(0.1, volvo.getCurrentSpeed(), 0.01);
+        assertEquals(0.1, volvo.getCurrentSpeed(), 0.0);
     }
 
     @Test
     public void testStopEngine() {
         volvo.startEngine();
         volvo.stopEngine();
-        assertEquals(0, volvo.getCurrentSpeed(), 0.01);
+        assertEquals(0, volvo.getCurrentSpeed(), 0.0);
     }
-
+}
