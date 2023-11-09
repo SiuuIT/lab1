@@ -63,8 +63,6 @@ public class CarsTest {
         volvo.decrementSpeed(0.1);
         assertEquals(0.875F, (volvo.getCurrentSpeed()),0.0F);
     }
-
-
     @Test
     public void testMove() {
         volvo.currentSpeed = 1;
@@ -73,7 +71,6 @@ public class CarsTest {
         volvo.stopEngine();
         assertEquals(1, volvo.y_coordinate,0.0);
     }
-
     @Test
     public void testSpeedFactor(){
         assertEquals(1.25, volvo.speedFactor(),0.0);

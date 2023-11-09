@@ -59,23 +59,23 @@ public class Cars implements Movable {
         currentSpeed = Math.max((getCurrentSpeed() - (speedFactor() * amount)), 0);
     }
 
-    double x_coordinate = 0;
-    double y_coordinate = 0;
+    public double x_coordinate = 0;
+    public double y_coordinate = 0;
 
     public void move() {
         while (getCurrentSpeed() != 0 && direction == 1 || direction == 3) {
             if (direction == 1) {
                 x_coordinate -= getCurrentSpeed();
-                if (direction == 3) {
-                    x_coordinate += getCurrentSpeed();
+            if (direction == 3) {
+                x_coordinate += getCurrentSpeed();
                 }
             }
-            while (getCurrentSpeed() != 0 && direction == 4 || direction == 2) {
-                if (direction == 4) {
-                    y_coordinate -= getCurrentSpeed();
+        if (getCurrentSpeed() != 0 && direction == 4 || direction == 2) {
+            if (direction == 4) {
+                y_coordinate -= getCurrentSpeed();
                 }
-                if (direction == 2) {
-                    y_coordinate += getCurrentSpeed();
+            if (direction == 2) {
+                y_coordinate = y_coordinate+ getCurrentSpeed();
                 }
             }
         }
