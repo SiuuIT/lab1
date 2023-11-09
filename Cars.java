@@ -49,7 +49,7 @@ public class Cars implements Movable {
             incrementSpeed(amount);
         }
     }
-    
+
     public void brake(double amount) {
         if(0.0D <= amount && amount <= 1.0D) {
             decrementSpeed(amount);}
@@ -63,7 +63,7 @@ public class Cars implements Movable {
     public double y_coordinate = 0;
 
     public void move() {
-        while (getCurrentSpeed() != 0 && direction == 1 || direction == 3) {
+        if (getCurrentSpeed() != 0 && direction == 1 || direction == 3) {
             if (direction == 1) {
                 x_coordinate -= getCurrentSpeed();
             if (direction == 3) {
