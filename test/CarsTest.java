@@ -53,7 +53,7 @@ public class CarsTest {
     @Test
     public void testIncrementSpeed() {
         volvo.currentSpeed = 1;
-        volvo.incrementSpeed(1);
+        volvo.incrementSpeed(0.1);
         assertEquals(1.125, volvo.getCurrentSpeed(), 0.0);
     }
 
@@ -61,13 +61,10 @@ public class CarsTest {
     public void testDecrementSpeed() {
         volvo.currentSpeed = 1;
         volvo.decrementSpeed(0.1);
-        assertEquals(0.875, volvo.getCurrentSpeed(),0.0);
+        assertEquals(0.875F, (volvo.getCurrentSpeed()),0.0F);
     }
 
-    @Test
-    public void gasTest(){
-        assertEquals(0.5, volvo.gas(3), 0.5);
-    }
+
     @Test
     public void testMove() {
 

@@ -1,5 +1,5 @@
 import java.awt.*;
-public abstract class Cars implements Movable {
+public class Cars implements Movable {
     public int direction = 2;
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
@@ -49,15 +49,14 @@ public abstract class Cars implements Movable {
             incrementSpeed(amount);
         }
     }
-
-    // TODO fix this method according to lab pm
+    
     public void brake(double amount) {
         if(0.0D <= amount && amount <= 1.0D) {
-            decrementSpeed(amount);
+            decrementSpeed(amount);}
     }
 
     public void decrementSpeed(double amount) {
-        currentSpeed = Math.max(getCurrentSpeed() - (speedFactor() * amount), 0);
+        currentSpeed = Math.max((getCurrentSpeed() - (speedFactor() * amount)), 0);
     }
 
     double x_coordinate = 0;
