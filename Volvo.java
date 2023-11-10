@@ -1,6 +1,8 @@
 import java.awt.*;
 public class Volvo extends Cars {
     public final static double trimFactor = 1.25;
+
+    @Override
     public double speedFactor(){
         return enginePower * 0.01 * trimFactor;
     }

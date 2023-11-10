@@ -40,7 +40,7 @@ public class Cars implements Movable {
         currentSpeed = Math.min((getCurrentSpeed() + (speedFactor() * amount)), enginePower);
     }
 
-    private double speedFactor() {
+    protected double speedFactor() {
         return 0;
 
     }
@@ -59,26 +59,28 @@ public class Cars implements Movable {
         currentSpeed = Math.max((getCurrentSpeed() - (speedFactor() * amount)), 0);
     }
 
-    public double x_coordinate = 0;
-    public double y_coordinate = 0;
+    double x_coordinate = 0;
+    double y_coordinate = 0;
 
     public void move() {
-        if (getCurrentSpeed() != 0 && direction == 1 || direction == 3) {
+        if (direction == 1 || direction == 3) {
             if (direction == 1) {
                 x_coordinate -= getCurrentSpeed();
-            if (direction == 3) {
-                x_coordinate += getCurrentSpeed();
-                }
             }
-        if (getCurrentSpeed() != 0 && direction == 4 || direction == 2) {
+                if (direction == 3) {
+                    x_coordinate += getCurrentSpeed();
+                }
+
+        }
+        if (direction == 4 || direction == 2) {
             if (direction == 4) {
                 y_coordinate -= getCurrentSpeed();
                 }
             if (direction == 2) {
                 y_coordinate = y_coordinate+ getCurrentSpeed();
                 }
-            }
         }
+
     }
     public void turnLeft() {
         direction = direction - 1;

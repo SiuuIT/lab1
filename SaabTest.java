@@ -11,11 +11,11 @@ public class SaabTest {
     @Test
     public void turboOnTest(){
         saab.setTurboOn();
-        assertTrue(saab.turboOn); }
+        assertTrue(saab.getTurbo());}
     @Test
     public void turboOffTest(){
         saab.setTurboOff();
-        assertFalse(saab.turboOn); }
+        assertFalse(saab.getTurbo());}
     @Test
     public void speedFactorTestTurbo(){
         saab.setTurboOn();
