@@ -53,23 +53,32 @@ public class CarsTest {
     @Test
     public void testIncrementSpeed() {
         volvo.currentSpeed = 1;
-        volvo.incrementSpeed(0.1);
-        assertEquals(1.125, volvo.getCurrentSpeed(), 0.0);
+        volvo.gas(1);
+        assertEquals(2.25, volvo.getCurrentSpeed(), 0.0);
     }
 
     @Test
     public void testDecrementSpeed() {
-        volvo.currentSpeed = 3;
-        volvo.decrementSpeed(1);
-        assertEquals(2, (volvo.getCurrentSpeed()),0);
+        volvo.currentSpeed = 1;
+        volvo.brake(0.1);
+        assertEquals(0.875F, (volvo.getCurrentSpeed()),0.0F);
     }
     @Test
-    public void testMove() {
-        volvo.currentSpeed = 2;
-        volvo.direction = 2;
+    public void testMoveY() {
+        volvo.currentSpeed = 1;
+        volvo.direction = 4;
         volvo.move();
         volvo.stopEngine();
-        assertEquals(1, volvo.y_coordinate,0.0);
+        assertEquals(-1, volvo.getY(),0.0);
+    }
+
+    @Test
+    public void testMoveX() {
+        volvo.currentSpeed = 1;
+        volvo.direction = 3;
+        volvo.move();
+        volvo.stopEngine();
+        assertEquals(1, volvo.getX(), 0.0);
     }
     @Test
     public void testSpeedFactor(){
@@ -85,7 +94,7 @@ public class CarsTest {
         volvo.turnRight();
         assertEquals(3,volvo.direction);
     }
-}
+
 
     @Test
     public void testGas() {
