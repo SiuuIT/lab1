@@ -69,7 +69,7 @@ public class CarsTest {
         volvo.direction = 4;
         volvo.move();
         volvo.stopEngine();
-        assertEquals(-1, volvo.y_coordinate,0.0);
+        assertEquals(-1, volvo.getY(),0.0);
     }
 
     @Test
@@ -78,7 +78,7 @@ public class CarsTest {
         volvo.direction = 3;
         volvo.move();
         volvo.stopEngine();
-        assertEquals(1, volvo.x_coordinate, 0.0);
+        assertEquals(1, volvo.getX(), 0.0);
     }
     @Test
     public void testSpeedFactor(){
