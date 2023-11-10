@@ -97,20 +97,28 @@ public class CarsTest {
 
 
     @Test
-    public void testGasAndBrake() {
+    public void testGas() {
         Cars car = new Cars();
         car.startEngine();
 
         car.gas(0.5);
         assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
 
+        car.gas(-0.1);
+        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
+    }
+
+    @Test
+    public void testBrake() {
+        Cars car = new Cars();
+        car.startEngine();
+
         car.brake(0.3);
         assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
 
-        car.gas(-0.1);
-        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
-
-        car.brake(1.5);  // Expecting the speed to remain the same (not increased)
+        car.brake(1.5);
         assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
     }
+
+
 }
