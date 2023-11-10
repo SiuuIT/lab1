@@ -84,12 +84,12 @@ public class Cars implements Movable {
     }
     public void turnLeft() {
         direction = direction - 1;
-        if (direction == 0) {
+        if (direction == 1) {
             direction = 4; }
     }
     public void turnRight() {
         direction += 1;
-        if (direction == 5) {
+        if (direction == 4) {
             direction = 1;}
     }
 }
