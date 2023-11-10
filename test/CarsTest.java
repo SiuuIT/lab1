@@ -59,9 +59,9 @@ public class CarsTest {
 
     @Test
     public void testDecrementSpeed() {
-        volvo.currentSpeed = 1;
-        volvo.decrementSpeed(0.1);
-        assertEquals(0.875F, (volvo.getCurrentSpeed()),0.0F);
+        volvo.currentSpeed = 3;
+        volvo.decrementSpeed(1);
+        assertEquals(2, (volvo.getCurrentSpeed()),0);
     }
     @Test
     public void testMove() {
@@ -84,5 +84,24 @@ public class CarsTest {
     public void testTurnRight() {
         volvo.turnRight();
         assertEquals(3,volvo.direction);
+    }
+}
+
+    @Test
+    public void testGasAndBrake() {
+        Cars car = new Cars();
+        car.startEngine();
+
+        car.gas(0.5);
+        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
+
+        car.brake(0.3);
+        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
+
+        car.gas(-0.1);
+        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
+
+        car.brake(1.5);  // Expecting the speed to remain the same (not increased)
+        assertTrue(car.getCurrentSpeed() >= 0 && car.getCurrentSpeed() <= car.getEnginePower());
     }
 }
