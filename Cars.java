@@ -61,8 +61,8 @@ public class Cars implements Movable {
 
     private double x_coordinate = 0;
     private double y_coordinate = 0;
-    public double getX(){return x_coordinate;}
-    public double getY(){return y_coordinate;}
+    public double getX(){return this.x_coordinate;}
+    public double getY(){return this.y_coordinate;}
 
     public void move() {
         if (direction == 1 || direction == 3) {
