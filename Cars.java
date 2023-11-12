@@ -15,26 +15,21 @@ public class Cars implements Movable {
     public double getCurrentSpeed() {
         return currentSpeed;
     }
-
-    public Color getColor() {
+    protected Color getColor() {
         return color;
     }
     public void setColor(Color clr) {
         color = clr;
     }
-
-    public void startEngine() {
+    protected void startEngine() {
         currentSpeed = 0.1;
     }
-
-    public void stopEngine() {
+    protected void stopEngine() {
         currentSpeed = 0;
     }
-
-    public void incrementSpeed(double amount) {
+    protected void incrementSpeed(double amount) {
         currentSpeed = Math.min((getCurrentSpeed() + (speedFactor() * amount)), enginePower);
     }
-
     protected double speedFactor() {
         return 0;
     }
@@ -43,14 +38,12 @@ public class Cars implements Movable {
             incrementSpeed(amount);
         }
     }
-
     public void brake(double amount) {
         if(0.0D <= amount && amount <= 1.0D) {
             decrementSpeed(amount);
         }
     }
-
-    public void decrementSpeed(double amount) {
+    protected void decrementSpeed(double amount) {
         currentSpeed = Math.max((getCurrentSpeed() - (speedFactor() * amount)), 0);
     }
     private double x_coordinate = 0;

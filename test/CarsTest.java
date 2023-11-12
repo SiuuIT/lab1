@@ -37,7 +37,14 @@ public class CarsTest {
         volvo.startEngine();
         assertEquals(0.1, volvo.getCurrentSpeed(),0.0);
     }
-
+    @Test
+    public void testGetX(){
+        assertEquals(0, volvo.getX(), 0.0);
+    }
+    @Test
+    public void testGetY() {
+        assertEquals(0, volvo.getY(), 0.0);
+    }
     @Test
     public void testStopEngine() {
         volvo.startEngine();
